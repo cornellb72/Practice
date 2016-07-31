@@ -1,0 +1,28 @@
+package automationPractice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import static org.assertj.core.api.Assertions.assertThat;
+public class ChicoState {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver = new FirefoxDriver();
+		Thread.sleep(2000);
+		
+		driver.get("http://www.csuchico.edu");
+		Thread.sleep(2000);
+		assertThat(driver.getPageSource().contains("Class Schedule"));
+		
+		driver.navigate().to("http://www.csuchico.edu/about/index.shtml");
+		Thread.sleep(2000);
+		assertThat(driver.getPageSource().contains("2014 Green Honor Roll"));
+		
+		driver.navigate().to("http://www.csuchico.edu/pa/chico-facts.shtml");
+		Thread.sleep(2000);
+		assertThat(driver.getPageSource().contains("Public Affairs and Publications"));
+
+		driver.quit();
+	}
+}
