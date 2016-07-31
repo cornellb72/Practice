@@ -1,0 +1,21 @@
+package automationPractice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import static org.assertj.core.api.Assertions.assertThat;
+public class ChicoState {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver driver = new FirefoxDriver();
+		Thread.sleep(2000);
+		driver.get("http://www.csuchico.edu");
+		Thread.sleep(2000);
+		
+		Select oSelect = new Select(driver.findElement(By.className("dropdown")));
+		oSelect.selectByVisibleText("Sustainability at Chico State");
+	}
+
+}
